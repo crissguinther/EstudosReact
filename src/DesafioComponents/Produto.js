@@ -5,7 +5,7 @@ const Produto = ({ produto }) => {
     <>
       <h3>{produto.nome}</h3>
       {produto.propriedades.map((prop, index) => {
-        return <li key={index}>{prop}</li>;
+        return <li key={prop}>{prop}</li>;
       })}
     </>
   );
