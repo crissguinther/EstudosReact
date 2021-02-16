@@ -14,7 +14,6 @@ const produtos = [
 const { pathname } = window.location;
 
 const App = () => {
-  console.log(produtos);
   if (pathname == "/")
     return (
       <section>

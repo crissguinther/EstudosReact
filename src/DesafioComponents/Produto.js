@@ -4,7 +4,7 @@ const Produto = ({ produto }) => {
   return (
     <>
       <h3>{produto.nome}</h3>
-      {produto.propriedades.map((prop, index) => {
+      {produto.propriedades.map((prop) => {
         return <li key={prop}>{prop}</li>;
       })}
     </>
