@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './DesafioComponents.js';
+import App from './ExercicioUseState.js';
 
 ReactDOM.render(
   <React.StrictMode>
