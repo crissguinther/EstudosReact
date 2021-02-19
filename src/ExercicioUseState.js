@@ -9,44 +9,38 @@
 
 import React from "react";
 import Display from "./ExercicioUseState/Display";
-import Produto from "./ExercicioUseState/Produto";
+import Product from "./ExercicioUseState/Product";
 
 const App = () => {
   const products = ["tablet", "smartphone", "notebook"];
-  const [activeProduct, setActiveProduct] = React.useState(null);
   const [loading, setLoading] = React.useState(null);
+  const [activeProduct, setActiveProduct] = React.useState(null);
 
-  async function fetchProduct(event) {
-    const productName = event.target.innerText;
+  async function handleClick(e) {
+    let productName = e.target.innerText;
+
     setLoading(true);
-    const response = await window.fetch(
+
+    let response = await fetch(
       `https://ranekapi.origamid.dev/json/api/produto/${productName}`
     );
-    const productBody = await response.text();
-    setActiveProduct(productBody);
 
+    let product = await response.json();
+    setActiveProduct(product);
     setLoading(false);
   }
 
-  return products.map((produto) => {
-    return (
-      <>
-        <Produto
-          style={{
-            display: "inline-block",
-            padding: "5px",
-            backgroundColor: "#0EAD52",
-          }}
-          nome={produto.slice(produto.lastIndexOf("/") + 1, produto.length + 1)}
-          key={produto.nome}
-          handleClick={fetchProduct}
-        />
-        {!loading && (
-          <Display activeProduct={activeProduct} loading={loading} />
-        )}
-      </>
-    );
-  });
+  return (
+    <>
+      {products.map((product) => (
+        <Product key={product} handleClick={handleClick} product={product} />
+      ))}
+      {loading && !activeProduct && <p>Carregando...</p>}
+      {!loading && activeProduct && (
+        <Display key={activeProduct.id} product={activeProduct} />
+      )}
+    </>
+  );
 };
 
 export default App;
