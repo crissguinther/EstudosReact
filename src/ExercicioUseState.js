@@ -9,12 +9,16 @@
 
 import React from "react";
 import Display from "./ExercicioUseState/Display";
+import Header from "./ExercicioUseState/Header";
 import Product from "./ExercicioUseState/Product";
+import Home from "./ExercicioUseState/Home";
 
 const App = () => {
   const products = ["tablet", "smartphone", "notebook"];
   const [loading, setLoading] = React.useState(null);
   const [activeProduct, setActiveProduct] = React.useState(null);
+
+  const { pathname } = window.location;
 
   async function handleClick(e) {
     let productName = e.target.innerText;
@@ -32,10 +36,14 @@ const App = () => {
 
   return (
     <>
-      {products.map((product) => (
-        <Product key={product} handleClick={handleClick} product={product} />
-      ))}
-      {loading && !activeProduct && <p>Carregando...</p>}
+      <Header />
+      {pathname === "/" && <Home />}
+      {pathname !== "/" &&
+        products.map((product) => (
+          <Product key={product} handleClick={handleClick} product={product} />
+        ))}
+      {pathname !== "/" && <h3>Produtos</h3>}
+      {loading && <p>Carregando...</p>}
       {!loading && activeProduct && (
         <Display key={activeProduct.id} product={activeProduct} />
       )}
