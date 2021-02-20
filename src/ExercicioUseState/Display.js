@@ -8,7 +8,7 @@ const Display = ({ product }) => {
       {product.fotos.map((foto) => (
         <img src={foto["src"]} key={foto["titulo"]} alt={foto["titulo"]}></img>
       ))}
-      <h2>{product.preco}</h2>
+      <h2>R${product.preco}</h2>
       <p>{product.descricao}</p>
     </div>
   );

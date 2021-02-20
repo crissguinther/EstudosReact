@@ -38,11 +38,11 @@ const App = () => {
     <>
       <Header />
       {pathname === "/" && <Home />}
-      {pathname !== "/" &&
+      {pathname === "/products" && <h3>Produtos</h3> &&
         products.map((product) => (
           <Product key={product} handleClick={handleClick} product={product} />
         ))}
-      {pathname !== "/" && <h3>Produtos</h3>}
+      {/* {pathname !== "/" && <h3>Produtos</h3>} */}
       {loading && <p>Carregando...</p>}
       {!loading && activeProduct && (
         <Display key={activeProduct.id} product={activeProduct} />

@@ -1,11 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './ExercicioUseState.js';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+// App deve ser puxado de acordo com a pagina do exercicio
+// para poder visualizá-los
+import App from "./ExercicioUseEffect";
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
