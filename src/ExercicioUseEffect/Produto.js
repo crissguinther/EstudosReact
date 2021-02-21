@@ -1,18 +1,13 @@
 import React from "react";
 
-const Produto = () => {
-  React.useEffect(() => {
-    function handleScroll(event) {
-      console.log(event);
-    }
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  return <div style={{ height: "200vh" }}>Meu Produto</div>;
+const Produto = ({ produto }) => {
+  if (produto === null) return null;
+  return (
+    <div>
+      <h1>{produto.nome}</h1>
+      <p>R${produto.preco}</p>
+    </div>
+  );
 };
 
 export default Produto;

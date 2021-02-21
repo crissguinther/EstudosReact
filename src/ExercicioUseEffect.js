@@ -1,8 +1,9 @@
 import React from "react";
+import Produto from "./ExercicioUseEffect/Produto";
 
 const App = () => {
   const products = ["notebook", "smartphone"];
-  const preferido = window.localStorage.getItem("preferido");
+  const preferido = window.localStorage.getItem("preferido") || "null";
   const [activeProduct, setActiveProduct] = React.useState(null);
 
   // Function that will fetch the product
@@ -30,18 +31,13 @@ const App = () => {
 
   return (
     <section>
-      <h1>Preferencia: {preferido !== "null" ? preferido : ""}</h1>
+      <h1>Preferência: {preferido !== "null" ? preferido : ""}</h1>
       {products.map((product) => (
         <button key={product} onClick={handleClick}>
           {product}
         </button>
       ))}
-      {activeProduct && (
-        <>
-          <h1>{activeProduct.nome}</h1>
-          <h3>{activeProduct.preco}</h3>
-        </>
-      )}
+      {activeProduct && <Produto produto={activeProduct} />}
     </section>
   );
 };

@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import "./index.css";
 // App deve ser puxado de acordo com a pagina do exercicio
 // para poder visualizá-los
-import App from "./ExercicioUseEffect";
+import App from "./useCallback";
 
 ReactDOM.render(
   <React.StrictMode>
