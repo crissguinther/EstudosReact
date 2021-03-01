@@ -1,10 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import "./App.css";
 import "./index.css";
 import "./style.css";
 // App deve ser puxado de acordo com a pagina do exercicio
 // para poder visualizá-los
-import App from "./formularios/checkbox";
+import App from "./formularios/onBlur";
 
 ReactDOM.render(
   <React.StrictMode>
