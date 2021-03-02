@@ -1,0 +1,17 @@
+.container {
+    background: #eee;
+    border    : 1px solid red;
+}
+
+.nav {
+    width          : 80vw;
+    margin         : 1rem auto;
+    display        : flex;
+    justify-content: space-between;
+    flex-direction : row-reverse;
+    order          : revert;
+}
+
+.reset {
+    margin: 1rem 30px;
+}

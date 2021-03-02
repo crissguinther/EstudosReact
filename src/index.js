@@ -5,7 +5,7 @@ import "./index.css";
 import "./style.css";
 // App deve ser puxado de acordo com a pagina do exercicio
 // para poder visualizá-los
-import App from "./animation/App";
+import App from "./DesafioFormularios/App";
 
 ReactDOM.render(
   <React.StrictMode>
