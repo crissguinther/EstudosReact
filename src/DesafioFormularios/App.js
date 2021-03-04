@@ -1,7 +1,7 @@
 import React from "react";
 import Display from "./components/Display";
 
-import { QuestionsStorage } from "./QuestionsContext";
+import { QuestionsStorage } from "./context/QuestionsContext";
 
 const App = () => {
   return (

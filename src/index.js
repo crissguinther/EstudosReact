@@ -5,11 +5,11 @@ import "./index.css";
 import "./style.css";
 // App deve ser puxado de acordo com a pagina do exercicio
 // para poder visualizá-los
-import App from "./DesafioFormularios/App";
+import App from "./classes/App";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />,
+    <App />
   </React.StrictMode>,
   document.getElementById("root")
 );

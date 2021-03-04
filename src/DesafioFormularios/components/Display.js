@@ -1,6 +1,6 @@
 import React from "react";
 
-import { QuestionsContext } from "../QuestionsContext";
+import { QuestionsContext } from "../context/QuestionsContext";
 import styles from "../styles/Display.module.css";
 
 import Pergunta from "./Pergunta";
